@@ -1,0 +1,212 @@
+/* @import url("styles.css"); */
+
+.form-container {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+}
+
+.form-container h2,
+h4 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: var(--bordo);
+}
+
+.form-container p {
+  text-align: center;
+  margin-top: 17px;
+  
+}
+ .parrafo-registro{
+      font-size: 50px;
+ }
+
+ .parrafo-login{
+      font-size: 50px;
+ }
+
+
+.form-container .require {
+  margin-top: 3px;
+  font-size: 9px;
+  color: red;
+  text-align: right;
+}
+/* Formulario */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form a:hover {
+  color: rgb(47, 199, 250);
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+  width: 80%;
+}
+.check {
+  margin-top: 5px;
+}
+.select-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-end;
+}
+.select-container select {
+  width: 30px;
+  margin-right: 15px;
+}
+.select-container label {
+  margin-top: 0;
+  margin-right: 5px;
+}
+.total-container {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.send-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--gris-claro);
+  border-radius: 20px;
+  padding: 5px 19px;
+  font-size: 13px;
+}
+.agregar {
+  text-align: right;
+}
+.agregar a button {
+  color: white;
+  background-color: orange;
+  border: 1px black solid;
+}
+
+.btn {
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  height: 2.3rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+  margin: 0.5rem 0;
+  width: 8rem;
+}
+.btn-submit {
+  background: var(--celeste);
+  color: white;
+  font-weight: bold;
+  transition: all 1s ease;
+  width: 100%;
+}
+.btn-submit:hover {
+  color: rgb(175, 175, 175);
+  box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);
+  background: linear-gradient(285deg, rgba(255, 255, 255, 1) 0%, var(--bordo));
+}
+.btn-confirm {
+  background: var(--celeste);
+  color: white;
+  font-weight: bold;
+  transition: all 1s ease;
+  width: 100%;
+}
+.btn-confirm:hover {
+  color: rgb(175, 175, 175);
+  box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);
+  background: linear-gradient(
+    285deg,
+    rgba(255, 255, 255, 1) 0%,
+    var(--celeste)
+  );
+}
+
+span.error-message {
+  color: tomato;
+  font-size: 0.7rem;
+  /* display: none; */
+}
+
+input.input-style {
+  border: none;
+  border-radius: 0.2rem;
+  height: 2rem;
+  padding: 5px 0.5rem;
+  outline: none;
+  border: 1px solid rgb(175, 175, 175);
+}
+div.input-file-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: none;
+  position: relative;
+  border: 1px solid rgb(175, 175, 175);
+  padding: 0 1rem;
+  border-radius: 0.2rem;
+  width: 100%;
+  height: 2rem;
+  text-align: center;
+  background-color: white;
+  font-size: 15px;
+  font-weight: bolder;
+}
+input.input-file {
+  position: absolute;
+  width: 100%;
+  height: 2rem;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+textarea.textarea-style {
+  height: 200px;
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.5rem;
+}
+select.select-style {
+  border: none;
+  border-radius: 0.2rem;
+  height: 2rem;
+  padding: 0 0.5rem;
+}
+label {
+  font-size: 0.8rem;
+  margin-top: 10px;
+  font-weight: bold;
+}
+@media (min-width: 768px) {
+  .send-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--gris-claro);
+    border-radius: 20px;
+    padding: 5px 19px;
+    font-size: 14px;
+  }
+}

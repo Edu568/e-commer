@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="sp">
+
+<%- include("partials/head") %>
+
+      <body>
+            <div class="container">
+
+                  <%- include("partials/header") %>
+
+                        <main class="main-section" style="z-index: 9997;">
+
+                              <!-- banner -->
+
+                              <%- include("partials/carousel")%>
+                                    <!-- Llama a products.ejs que esta en la carpeta partials, y en el segundo parametro paso un
+                               objeto literal con la propiedad title que es un string y la propiedad products que recibe un array 
+                               que viene de productosController.js -->
+                              <div class="mainWrapper">
+
+                                     <%- include("partials/product", {title:"Productos Destacados ", products: featured }) %>
+                                     <a href="productos/featured"></a>
+                                     
+                                     <%- include("partials/product", {title:"", products: inSale }) %>
+                                     <a href="productos/inSale"><img class="desplegar" src="/img/iconos/desplegar.png" alt=""></a>
+                                     
+                              </div>
+
+
+                        </main>
+
+                        <%- include("partials/footer") %>
+                              <%- include("partials/scripts") %>
+
+
+            </div>
+      </body>
+
+</html>

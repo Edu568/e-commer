@@ -1,0 +1,266 @@
+#price{
+      font-size: 40px;
+}
+
+#main-section{
+ background-color: rgba(255, 255, 255, 0.4);
+ border-radius: 16px;
+}   
+
+main.main-section section.container {
+      display: flex;
+      flex-direction: column;
+}
+
+
+main.main-section section.container div.container-title p {
+
+            font-size: 1rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 1rem;
+            text-align: center;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra del texto */
+            
+      
+}
+
+div.container-details{
+      align-items: center;
+}
+ div.container-details h3{
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(8, 8, 8);
+  margin-bottom: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-top: 20px;
+
+}
+
+div.container-title h1 {
+      font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  animation-name: resaltar;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+@keyframes resaltar {
+      0% {
+        color: white;
+        text-shadow: none;
+      }
+      50% {
+        color: rgb(115, 255, 0);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      100% {
+        color: white;
+        text-shadow: none;
+      }
+    }
+
+main.main-section section.container div.image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+main.main-section section.container div.image img {
+      width: 75%;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      max-width: 350px;
+}
+main.main-section section.container div.container-details {
+      background-color: white;
+      border-radius: 5px;
+      margin: 0 auto;
+}
+main.main-section div.compra-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+}
+
+main.main-section section.container div.container-compra,
+main.main-section section.container div.conteineir-decription {
+      font-size: 17px;
+      margin: 10px 0;
+      padding: 10px 2px;
+      text-align: center;
+      text-align: justify;
+      padding-left: 7px;
+      padding-right: 7px;
+}
+main.main-section section.container div.container-compra p {
+      margin: 5px 0;
+}
+main.main-section section.container div.container-compra a {
+      color: var(--celeste);
+      font-size: 14px;
+}
+
+/* main.main-section section.container p.cuotas {
+      margin-bottom: 5px;
+}
+main.main-section section.container div.conteiner-compra {
+      font-size: 14px;
+      margin-bottom: 10px;
+      line-height: 10px;
+}
+main.main-section section.container div.conteiner-compra p {
+      margin-top: 10px;
+}
+main.main-section section.container div.conteineir-decrip p {
+      margin-top: 10px;
+      font-size: 15px;
+}
+main.main-section section.container div.conteineir-decrip div {
+      line-height: 10px;
+      margin-top: 15px;
+} */
+
+/* Media queries */
+@media (min-width: 768px) {
+      main.main-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 9px;
+            margin-bottom: 14px;
+            background-color: var(--gris-claro);
+            border-radius: 9px;
+      }
+
+      main.main-section section.container {
+            flex-direction: row;
+      }
+
+      main.main-section section.container div.container-details {
+            max-width: 50%;
+      }
+
+      main.main-section section.container div.container-title p {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 1rem;
+            text-align: center;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra del texto */
+            /* Opcional: Sombra adicional para crear efecto relieve */
+            
+      }
+      main.main-section section.container div.container-title h3 {
+            font-weight: normal;
+            margin-bottom: 6px;
+            font-size: 21px;
+      }
+
+      main.main-section section.container div.container-title p.cuotas {
+            margin-bottom: 9px;
+      }
+      main.main-section section.container div.image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+      }
+
+      main.main-section section.container div.image img {
+            width: 60%;
+            border-radius: 24px;
+            margin-bottom: 14px;
+      }
+      main.main-section section.container div.container-details {
+            padding: 10px;
+            margin-bottom: 15px;
+      }
+      main.main-section section.container div.conteiner-compra {
+            font-size: 17px;
+            margin-bottom: 14px;
+            line-height: 10px;
+      }
+      main.main-section section.container div.conteiner-compra a {
+            color: var(--celeste);
+      }
+      main.main-section section.container div.conteiner-compra p {
+            font-size: 22px;
+            margin-top: 18px;
+      }
+      main.main-section section.container div.conteineir-decrip h3 {
+            font-size: 23px;
+      }
+      main.main-section section.container div.conteineir-decrip p {
+            margin-top: 14px;
+            font-size: 18px;
+      }
+      main.main-section section.container div.conteineir-decrip div {
+            line-height: 10px;
+            margin-top: 20px;
+      }
+}
+
+@media (min-width: 1024px) {
+      main.main-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 13px;
+            margin-bottom: 18px;
+            background-color: var(--gris-claro);
+            border-radius: 13px;
+      }
+      main.main-section section.container div.container-title p {
+            color: white;
+            font-size: 24px;
+      }
+      main.main-section section.container div.container-title h3 {
+            font-weight: normal;
+            margin-bottom: 6px;
+            font-size: 26px;
+      }
+
+      main.main-section section.container div.container-title p.cuotas {
+            margin-bottom: 13px;
+      }
+      main.main-section section.container div.image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+      }
+      main.main-section section.container div.image img {
+            width: 50%;
+            border-radius: 24px;
+            margin-bottom: 14px;
+      }
+      main.main-section section.container div.conteiner-compra {
+            font-size: 17px;
+            margin-bottom: 14px;
+            line-height: 10px;
+      }
+      main.main-section section.container div.conteiner-compra a {
+            color: var(--celeste);
+      }
+      main.main-section section.container div.conteiner-compra p {
+            margin-top: 18px;
+      }
+      main.main-section section.container div.conteineir-decrip p {
+            margin-top: 15px;
+            font-size: 18px;
+      }
+      main.main-section section.container div.conteineir-decrip h3 {
+            font-size: 29px;
+      }
+      main.main-section section.container div.conteineir-decrip div {
+            line-height: 10px;
+            margin-top: 29px;
+      }
+}

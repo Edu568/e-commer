@@ -1,0 +1,12 @@
+[
+      
+      {
+            "id": 3,
+            "firstName": "user",
+            "lastName": "user",
+            "email": "user1@mail.com",
+            "password": "$2a$12$/1Qz7FeKpWrPiseSFpKQuemoCQAfisWWDR1/i9x3ix.HwTL5rO5F.",
+            "avatar": "1678903680575_avatar.webp",
+            "typeOfAccess": "user"
+      }
+]

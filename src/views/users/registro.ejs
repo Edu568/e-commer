@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="sp">
+
+<%- include("../partials/head") %>
+
+      <body>
+            <div class="container">
+                  <%- include("../partials/header") %>
+
+                        <main>
+                              <div class="form-container">
+                                    <form action=" /users/register" method="POST" enctype="multipart/form-data" id="form">
+                                          <div class="form">
+                                                <img class="image-register" src="/img/logo.png" alt="">
+                                                <p class="parrafo-registro">Registrate</p>
+                                                <div class="input-container">
+                                                      <input class="input-style form-control" type="text" name="nombre"
+                                                            placeholder="Ingrese su nombre" id="name"
+                                                            value="<%= locals.old && locals.old.nombre ? locals.old.nombre : null %>">
+                                                      <span class="error-message" id="nameErrors">
+                                                            <%= locals.errors && locals.errors.nombre ? locals.errors.nombre.msg : null %>
+                                                      </span>
+                                                </div>
+                                                <div class="input-container">
+                                                      <input class="input-style form-control" type="text" name="apellido"
+                                                            placeholder="Ingrese su apellido" id="lastname"
+                                                            value="<%= locals.old && locals.old.apellido ? locals.old.apellido : null %>">
+                                                      <span class="error-message" id="lastnameErrors">
+                                                            <%= locals.errors && locals.errors.apellido ? locals.errors.apellido.msg : null %>
+                                                      </span>
+                                                </div>
+                                                <div class="input-container">
+                                                      <input class="input-style form-control" type="email" name="email" placeholder="Ingrese su email"
+                                                            id="email" value="<%= locals.old && locals.old.email ? locals.old.email : null %>">
+                                                      <span class="error-message" id="emailErrors">
+                                                            <%= locals.errors && locals.errors.email ? locals.errors.email.msg : null %>
+                                                      </span>
+                                                </div>
+                                                <div class="input-container">
+                                                      <input class="input-style form-control" type="password" name="pass"
+                                                            placeholder="Ingrese su contraseña" id="pass">
+                                                      <span class="error-message" id="passErrors">
+                                                            <%= locals.errors && locals.errors.pass ? locals.errors.pass.msg : null %>
+                                                      </span>
+                                                </div>
+
+                                                <div class="input-container">
+                                                      <input class="input-style form-control" type="password" name="pass2"
+                                                            placeholder="Re-ingrese su contraseña" id="pass2">
+                                                      <span class="error-message" id="pass2Errors">
+                                                            <%= locals.errors && locals.errors.pass2 ? locals.errors.pass2.msg : null %>
+                                                      </span>
+                                                </div>
+
+                                                <div class="img-container" id="img-preview">
+
+                                                </div>
+                                                <div class="input-container">
+                                                      <div class="input-file-container">
+                                                            <p>Agregar Avatar</p>
+                                                            <input class="input-file form-control " type="file" id="image" name="image">
+                                                      </div>
+                                                      <span class="error-message" id="fileErrors">
+                                                            <%= locals.errors && locals.errors.image ? locals.errors.image.msg : null %>
+                                                      </span>
+                                                </div>
+                                                <div class="check">
+                                                      <div>
+                                                            <label for="recordar"> <a href="">Acepto los términos y condiciones</a> </label>
+                                                            <input type="checkbox" name="terms" id="recordar">
+                                                      </div>
+                                                      <span class="error-message" id="termsErrors">
+                                                            <%= locals.errors && locals.errors.terms ? locals.errors.terms.msg : null %>
+                                                      </span>
+                                                </div>
+
+                                                <div class="button-container">
+                                                      <button type="submit" class="btn btn-submit">Registrarme</button>
+                                                </div>
+                                                <span>¿Ya tienes cuenta? iniciá sesión <a href="/users/login">aca</a></span>
+                                          </div>
+                                    </form>
+                              </div>
+                        </main>
+
+                        <%- include("../partials/footer") %>
+
+                              <%- include("../partials/scripts") %>
+            </div>
+            <script src="/js/users/registerScript.js"></script>
+      </body>
+
+</html>

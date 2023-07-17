@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head') %>
+
+      <body>
+            <div class="container">
+                  <%- include('../partials/header') %>
+
+
+                        <main class="main-container-products">
+                              <div class="container-main-nav">
+                                    <%- include("partials/adminMain") %>
+                              </div>
+                              <div class="tabla-container">
+                                    <div>
+                                          <h1 class="title">SubCategorias</h1>
+                                          <article class="agregar">
+                                                <a href="/admin/subcategories/create"><button type="button"
+                                                            class="btn btn-success">Agregar</button></a>
+                                          </article>
+                                    </div>
+
+                                    <table class="table table-hover table-sm">
+                                          <thead>
+                                                <tr>
+                                                      <th scope="col">Id</th>
+                                                      <th scope="col">Categorias</th>
+                                                      <th scope="col">SubCategorias</th>
+                                                      <th scope="col">Editar</th>
+                                                      <th scope="col">Borrar</th>
+
+                                                </tr>
+                                          </thead>
+                                          <tbody>
+                                                <% subcategorias.forEach(subcategory=> { %>
+                                                      <tr>
+                                                            <td><%- subcategory.idSubCategory%></td>
+                                                            <td><%- subcategory.category.name%></td>
+                                                            <td><%- subcategory.name%></td>
+                                                            <td>
+                                                                  <a href="/admin/categories/edit/<%= subcategory.idSubCategory %> ">
+                                                                        <button type="button" class="btn btn-confirm btn-width"><i
+                                                                                    class="fa-solid fa-pen-to-square"></i></button>
+                                                                  </a>
+                                                            </td>
+                                                            <td>
+                                                                  <form action="/admin/categories/delete/<%= subcategory.idSubCategory %>?_method=DELETE"
+                                                                        method="POST" style="display: inline-flex">
+                                                                        <button type="submit" class="btn btn-submit btn-width">
+                                                                              <i class="fa-solid fa-trash-can"></i>
+                                                                        </button>
+                                                                  </form>
+                                                            </td>
+                                                      </tr>
+                                                      <% }) %>
+                                          </tbody>
+                                    </table>
+
+                              </div>
+                        </main>
+                        <%- include("../partials/footer") %>
+                              <%- include("../partials/scripts") %>
+            </div>
+      </body>
+
+</html>

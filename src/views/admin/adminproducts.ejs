@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head') %>
+
+      <body>
+            <div class="container">
+                  <%- include('../partials/header') %>
+
+
+                        <main class="main-container-products">
+                              <div class="container-main-nav">
+                                    <%- include("partials/adminMain") %>
+                              </div>
+                              <div class="tabla-container">
+                                    <div>
+                                          <h1 class="title">Productos</h1>
+                                          <article class="agregar">
+                                                <a href="/admin/products/create"><button type="button" class="btn btn-success">Agregar</button></a>
+                                          </article>
+                                    </div>
+
+                                    <table class="table table-hover table-sm">
+                                          <thead>
+                                                <tr>
+                                                      <th scope="col">Id</th>
+                                                      <th scope="col">Nombre</th>
+                                                      <th scope="col">Categoria</th>
+                                                      <th scope="col">Subcategoria</th>
+                                                      <th scope="col">Precio</th>
+                                                      <th scope="col">Decuento</th>
+                                                      <th cope="col">Editar</th>
+                                                      <th scope="col">Borrar</th>
+
+                                                </tr>
+                                          </thead>
+                                          <tbody>
+                                                <% for( let i=0; i<products.length; i++) { %>
+                                                      <tr>
+                                                            <td><%- products[i].idProduct%></td>
+                                                            <td><%- products[i].name%></td>
+                                                            <td><%- products[i].subcategory.category.name%></td>
+                                                            <td><%- products[i].subcategory.name%></td>
+                                                            <td><%- products[i].price%></td>
+                                                            <td><%- products[i].discount%></td>
+                                                            <td>
+                                                                  <a href="/admin/products/edit/<%= products[i].idProduct %> ">
+                                                                        <button type="button" class="btn btn-confirm btn-width"><i
+                                                                                    class="fa-solid fa-pen-to-square"></i></button>
+                                                                  </a>
+                                                            </td>
+                                                            <td>
+                                                                  <form action="/admin/products/delete/<%= products[i].idProduct %>?_method=DELETE"
+                                                                        method="POST" style="display: inline-flex">
+                                                                        <button type="submit" class="btn btn-submit btn-width">
+                                                                              <i class="fa-solid fa-trash-can"></i>
+                                                                        </button>
+                                                                  </form>
+                                                            </td>
+                                                      </tr>
+                                                      <% } %>
+                                          </tbody>
+                                    </table>
+                              </div>
+                        </main>
+                        <%- include("../partials/footer") %>
+                              <%- include("../partials/scripts") %>
+            </div>
+      </body>
+
+</html>

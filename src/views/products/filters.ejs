@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="sp">
+
+<%- include("../partials/head") %>
+
+      <body>
+            <div class="container">
+
+                  <%- include("../partials/header") %>
+
+                        <main class="main-section">
+                              <div class="mainWrapper">
+
+                                    
+                                    <% if (!products || products.length === 0) { %>
+                                          <div class="alert-message">
+                                            <p class="msj">No se encontraron productos.</p>
+                                          </div>
+                                          <% } else { %>
+                                          <%- include("../partials/product", {title: category , products: products }) %>
+                                          <% } %>
+                                    
+                                   
+                              </div>
+
+                        </main>
+
+                        <%- include("../partials/footer") %>
+                              <%- include("../partials/scripts") %>
+
+            </div>
+      </body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head') %>
+
+      <body>
+            <div class="container">
+                  <%- include('../partials/header') %>
+
+
+                        <main class="main-container-products">
+                              <div class="container-main-nav">
+                                    <%- include("partials/adminMain") %>
+                              </div>
+                              <div class="tabla-container">
+                                    <div>
+                                          <h1 class="title">Usuarios</h1>
+
+                                    </div>
+
+                                    <table class="table table-hover table-sm">
+                                          <thead>
+                                                <tr>
+                                                      <th scope="col">Id</th>
+                                                      <th scope="col">E-mail</th>
+                                                      <th scope="col">Tipo de Acceso</th>
+                                                      <th scope="col">Editar</th>
+                                                      <th scope="col">Borrar</th>
+
+                                                </tr>
+                                          </thead>
+                                          <tbody>
+                                                <% users.forEach(user=> { %>
+                                                      <tr>
+                                                            <td><%- user.idUser%></td>
+                                                            <td><%- user.email%></td>
+                                                            <td><%- user.typeOfAccess%></td>
+                                                            <td>
+                                                                  <form action="/admin/users/edit/<%= user.idUser %>?_method=PUT" method="POST">
+                                                                        <select name="typeOfAccess" id="typeOfAccess">
+                                                                              <option selected hidden value="<%= user.typeOfAccess %>">
+                                                                                    <%= user.typeOfAccess %>
+                                                                              </option>
+                                                                              <option value="admin">admin</option>
+                                                                              <option value="user">user</option>
+                                                                        </select>
+                                                                        <button type="submit" class="btn btn-confirm btn-width"><i
+                                                                                    class="fa-solid fa-pen-to-square"></i>
+                                                                        </button>
+                                                                  </form>
+                                                            </td>
+                                                            <td>
+                                                                  <form action="/users/delete/<%= user.idUser %>?_method=DELETE" method="POST"
+                                                                        style="display: inline-flex">
+                                                                        <button type="submit" class="btn btn-submit btn-width">
+                                                                              <i class="fa-solid fa-trash-can"></i>
+                                                                        </button>
+                                                                  </form>
+                                                            </td>
+                                                      </tr>
+                                                      <% }) %>
+                                          </tbody>
+                                    </table>
+
+                              </div>
+                        </main>
+                        <%- include("../partials/footer") %>
+                              <%- include("../partials/scripts") %>
+            </div>
+      </body>
+
+</html>

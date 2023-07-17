@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="sp">
+<%- include('../partials/head')%>
+
+      <body>
+            <div class="container">
+                  <%- include('../partials/header')%>
+                        <main class="usersForm-container">
+
+                              <h3 class="userTitle">Edita tu perfil</h3>
+                              <div class="form-container">
+                                    <form action="/users/profile/edit/" method="POST" enctype="multipart/form-data" id="form">
+                                          <div class="form">
+                                                <div class="input-container">
+                                                      <input class="input-style form-control " type="text" name="firstName" placeholder="Nombre"
+                                                            id="name"
+                                                            value="<%= locals.old && locals.old.firstName ? locals.old.firstName : user.userdetail.firstName %>">
+                                                      <span class=" error-message" id="nameErrors">
+                                                            <%= locals.errors && locals.errors.firstName ? locals.errors.firstName.msg : null %>
+                                                      </span>
+                                                </div>
+                                                <div class="input-container">
+                                                      <input class="input-style form-control " type="text" name="lastName" placeholder="Apellido"
+                                                            id="lastname"
+                                                            value="<%= locals.old && locals.old.lastName ? locals.old.lastName : user.userdetail.lastName %>">
+                                                      <span class="error-message" id="lastnameErrors">
+                                                            <%= locals.errors && locals.errors.lastName ? locals.errors.lastName.msg : null %>
+                                                      </span>
+                                                </div>
+                                                <div class="input-container">
+                                                      <input class="input-style form-control " type="email" name="email"
+                                                            placeholder="Ingresá tu email" readonly
+                                                            value="<%= locals.old && locals.old.email ? locals.old.email : user.email %>">
+                                                </div>
+
+
+
+                                                <div class="input-container">
+                                                      <input class="input-style form-control" type="password" name="pass"
+                                                            placeholder="Ingrese su contraseña" id="pass">
+                                                      <span class="error-message" id="passErrors">
+                                                            <%= locals.errors && locals.errors.pass ? locals.errors.pass.msg : null %>
+                                                      </span>
+                                                </div>
+                                                <div class="input-container">
+                                                      <input class="input-style form-control" type="password" name="pass2"
+                                                            placeholder="Re-ingrese su contraseña" id="pass2">
+                                                      <span class="error-message" id="pass2Errors">
+                                                            <%= locals.errors && locals.errors.pass2 ? locals.errors.pass2.msg : null %>
+                                                      </span>
+                                                </div>
+
+
+
+
+                                                <div class="input-container">
+                                                      <input class="input-style form-control " type="text" name="tel"
+                                                            placeholder="Ingresá tu teléfono"
+                                                            value="<%= locals.old && locals.old.tel ? locals.old.tel : user.userdetail.phone %>">
+                                                </div>
+                                                <div class="input-container">
+                                                      <input class="input-style form-control " type="text" name="address" placeholder="Domicilio"
+                                                            value="<%= locals.old && locals.old.address ? locals.old.address : user.userdetail.address %>">
+                                                </div>
+                                                <div class="input-container">
+                                                      <input class="input-style form-control" type="text" name="postal_code"
+                                                            placeholder="Código postal"
+                                                            value="<%= locals.old && locals.old.postal_code ? locals.old.postal_code : user.userdetail.postalCode %>">
+                                                </div>
+                                                
+                                                <div class="input-container">
+
+
+
+                                                      
+
+                                                      </select>
+                                                </div>
+
+
+
+                                                <div class="img-container" id="img-preview">
+                                                      <img src="/img/avatar/<%=user.userdetail.avatar %>" alt=""
+                                                            style="width: 100%;height: 100%;object-fit: contain;border-radius: inherit;">
+                                                </div>
+                                                <div class="input-container">
+                                                      <div class="input-file-container">
+                                                            <p>Agregar Avatar</p>
+                                                            <input class="input-file form-control" type="file" id="image" name="image">
+                                                      </div>
+                                                      <span class="error-message" id="fileErrors">
+                                                            <%= locals.errors && locals.errors.image ? locals.errors.image.msg : null %>
+                                                      </span>
+                                                </div>
+
+                                                <div class="button-container">
+                                                      <button type="submit" class="btn btn-submit">
+                                                            GUARDAR
+                                                      </button>
+                                                </div>
+                                          </div>
+                                    </form>
+                              </div>
+                        </main>
+                        <%- include("../partials/footer") %>
+                              <%- include('../partials/scripts')%>
+            </div>
+            <script src="/js/users/profileScript.js"></script>
+      </body>
+
+</html>

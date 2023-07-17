@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="sp">
+
+<%- include("../partials/head") %>
+
+      <body>
+            <div class="container">
+
+                  <%- include("../partials/header") %>
+
+                        <main class="main-section">
+                              <h2 class="titulo-carrito">Carrito de compras</h2>
+
+                              
+
+                              <% if (!order || order.length === 0) { %>
+                                    <p class="msj">No tenes productos en el carrito.</p>
+                                    <a href="http://localhost:3003/productos/Todos%20los%20Productos" class="link">Seguir comprando</a>
+                                    <% } else { %>
+                                    <%- include("../partials/cart", {order}) %>
+                                    <% } %>
+
+                                    <section class="cupon-container">
+                                          <div class="form-container">
+                                                <form action="" method="">
+                                                      <div class="form">
+
+                                                           
+                                          
+                                                            <div class="send-container">
+                                                                 
+                                                                  <div class="price">
+                                                                        <span>Costo del envio: $ </span><span> 0.00</span>
+                                                                  </div>
+                                                                  <div class="descuento">
+                                                                        <span>Descuento: $ </span><span>0.00</span>
+                                                                  </div>
+                                                                  <div class="price-total">
+                                                                        <span>Total: $</span> <span id="totalOrder"> 0</span>
+                                                                  </div>
+                                                            </div>
+                                                            <div class="button-container">
+                                                                  <button type="submit" class="btn btn-confirm">Confirmar</button>
+                                                            </div>
+                                                      </div>
+                                                </form>
+                                          </div>
+                                    </section>
+
+
+
+                        </main>
+
+                        <%- include("../partials/footer") %>
+
+                              <%- include("../partials/scripts") %>
+            </div>
+            <script src="/js/products/cart.js"></script>
+      </body>
+
+</html>

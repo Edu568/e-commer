@@ -1,0 +1,37 @@
+<!-- Recibo desde el home.ejs  un string title y un array product, 
+el cual itero con un forEach y cargo cada campo donde corresponde  -->
+
+<section class="vip-products">
+      <div class="container-title">
+            <h1 class="title">
+                  
+                  <%- title %>
+            </h1>
+      </div>
+      <% for( let i=0; i < products.length; i++ ) { %>
+            <article class="product">
+                  <div class="product-container">
+                        <a class="photo-container" href="/productos/descripcion/<%- products[i].idProduct  %> ">
+                              <img class="photo" src="/img/<%- products[i].subcategory.category.name %>/<%- products[i].images.name %>" alt="">
+                        </a>
+
+                        
+
+                        <% if (products[i].discount>0) { %>
+                              <div class="descuento">
+                                    <p><%- products[i].discount %>%</p>
+                              </div>
+                              <% } %>
+
+                  </div>
+                  <div class="name-price-container">
+
+                        <h2 class="name"><%- products[i].name %></h2>
+                        <div class="pp">
+                              <p class="price">$ <%- products[i].price %></p>
+                             
+                        </div>
+                  </div>
+            </article>
+            <% } %>
+</section>

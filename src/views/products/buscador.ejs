@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="sp">
+
+<%- include("partials/head") %>
+
+      <body>
+            <div class="container">
+                  <%- include("partials/header") %>
+
+                        <div class="Filter">
+                              <div class="Filter__Container">
+                                    <button class="Filter__Title">Ordenar por:</button>
+                                    <ul class="Filter__Options">
+                                          <li class="Filter__Option"><a class="Filter__Option-link">Menor precio</a></li>
+                                          <li class="Filter__Option"><a class="Filter__Option-link">Mayor precio</a></li>
+                                          <li class="Filter__Option"><a class="Filter__Option-link">Más vendidos</a></li>
+                                          <li class="Filter__Option"><a class="Filter__Option-link">Mejor calificación</a></li>
+                                          <li class="Filter__Option"><a class="Filter__Option-link">A - Z</a></li>
+                                          <li class="Filter__Option"><a class="Filter__Option-link">Z - A</a></li>
+                                          <li class="Filter__Option"><a class="Filter__Option-link">Fecha de lanzamiento</a></li>
+                                          <li class="Filter__Option"><a class="Filter__Option-link">Mejor descuento</a></li>
+                                    </ul>
+                              </div>
+                        </div>
+                        <section id="contenedor-main">
+
+                              <div>
+
+
+                                    <ul id="listaArticulos">
+                                          <li class="articulo">Amoladora</li>
+                                          <li class="articulo">Soldador</li>
+                                          <li class="articulo">Destornillador</li>
+                                          <li class="articulo">Estante</li>
+                                          <li class="articulo">Martillo</li>
+                                          <li class="articulo">Lamparitas</li>
+                                          <li class="articulo">Tornillos</li>
+                                          <li class="articulo">Pinza</li>
+
+                              </div>
+
+
+                        </section>
+
+                        <%- include("partials/footer") %>
+
+                              <script src="/js/script.js"></script>
+            </div>
+      </body>
+
+</html>

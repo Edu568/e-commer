@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="sp">
+
+<%- include("../partials/head") %>
+
+      <body>
+            <div class="container">
+
+                  <%- include("../partials/header") %>
+
+                        <main class="main-section" id="main-section">
+                              <section class="container">
+
+                                   <div > <div class="container-title">
+                                          <p>Nuevo| <%- product.sold %> vendidos</p>
+                                          <p><%- product.name %></p>
+                                    </div>
+
+                                    <div class="image">
+                                          <img src="/img/<%- product.subcategory.category.name %>/<%- product.images.name ? product.images.name: 'defauld.png' %>"
+                                                alt="">
+                                    </div>
+
+                                    <div class="compra-container">
+                                          <div class="form-container">
+                                                <!-- <div class="form"> -->
+                                                <div class="select-container">
+                                                      <form action="/productos/carrito/<%- product.idProduct %>" method="POST">
+                                                            <label for="quantity">Cantidad: </label>
+                                                            <select name="quantity" class="input-select" id="quantity">
+                                                                  <option value="1" hidden selected>1</option>
+                                                                  <option value="1">1</option>
+                                                                  <option value="2">2</option>
+                                                                  <option value="3">3</option>
+                                                                  <option value="4">4</option>
+                                                                  <option value="5">5</option>
+                                                            </select>
+
+                                                            <button type="submit" class="btn btn-confirm" style="width: 50px;"><i
+                                                                        class="fa-solid fa-cart-shopping"></i></button>
+                                                      </form>
+                                                </div>
+
+                                                <form action="/productos/compra" method="POST" style="justify-content: center; display: flex">
+                                                      <div class="button-container">
+                                                            <button type="submit" class="btn btn-confirm">Finalizar</button>
+                                                      </div>
+                                                </form>
+                                                <!-- </div> -->
+
+                                                <% if ( session.user && session.user.typeOfAccess=="admin" ){ %>
+
+                                                      <div class="form">
+                                                            <div class="button-container">                                                     
+                                                                  <button class="btn btn-confirm">
+                                                                        <a href="/admin/products/edit/<%- product.idProduct %>" class="editarProduc">EDITAR
+                                                                              </a>
+                                                                  </button>
+                                                            </div>
+                                                      </div>
+                                                      <div class="form">
+                                                            <div class="button-container"> 
+                                                                  <form action="/admin/products/delete/<%- product.idProduct %>?_method=DELETE" method="POST"
+                                                                        style="display: inline-flex;width: 100%;" >
+                                                                        <button type="submit" class="btn btn-submit">ELIMINAR</button>
+                                                                  </form>                                                                                                    
+                                                            </div>
+                                                      </div>
+
+                                                      <% } %>
+
+                                          </div>
+                                    </div> </div>
+
+
+
+
+
+
+                                    <div class="container-details">
+                                          <div class="pago">
+                                                <p class="price" id="price">$ <%- product.price %></p> 
+                                          </div>
+                                          
+                                          <h3>Descripción</h3>
+                                          <div class="conteineir-decription">
+                                                <p><%- product.description.replace(/\n/g, "<br />" ) %>
+                                                </p>
+
+                                          </div>
+                                    </div>
+
+                              </section>
+                              <div class="mainWrapper">
+
+                                    <%- include("../partials/product", {title:"OFERTAS", products: inSale }) %>
+                              </div>
+
+
+                        </main>
+
+                        <%- include("../partials/footer") %>
+
+                              <%- include("../partials/scripts") %>
+
+            </div>
+
+      </body>
+
+</html>

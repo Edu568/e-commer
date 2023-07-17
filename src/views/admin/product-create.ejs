@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="sp">
+<%- include("../partials/head") %>
+
+      <body>
+            <div class="container">
+                  <%- include("../partials/header") %>
+                        <main>
+                              <div class="form-container">
+                                    <h2>Agregar Producto</h2>
+                                    <p>Ingresá los datos</p>
+                                    <form action="/admin/products/create" method="POST" enctype="multipart/form-data" id="form">
+                                          <div class="form">
+                                                <div class="input-container">
+                                                      <label for="name" class="form-label">Nombre:</label>
+                                                      <input class="input-style form-control" type="text" name="name" placeholder="Ej: Ecommer"
+                                                            id="name" value="<%= locals.old && locals.old.name ? locals.old.name : null %>">
+                                                      <span class="error-message" id="nameErrors">
+                                                            <%= locals.errors && locals.errors.name ? locals.errors.name.msg : null %>
+                                                      </span>
+                                                </div>
+                                                <div class="input-container">
+                                                      <label for="price" class="form-label">Precio:</label>
+                                                      <input class="input-style form-control" type="number" name="price" placeholder="Ej: 2500"
+                                                            id="price" step="0.1"
+                                                            value="<%= locals.old && locals.old.price ? locals.old.price : null %>">
+                                                      <span class="error-message" id="priceErrors">
+                                                            <%= locals.errors && locals.errors.price ? locals.errors.price.msg : null %>
+                                                      </span>
+                                                </div>
+                                                <div class="input-container">
+                                                      <label for="discount" class="form-label">Descuento:</label>
+                                                      <input class="input-style form-control" type="number" name="discount" placeholder="Ej: 10"
+                                                            id="discount"
+                                                            value="<%= locals.old && locals.old.discount ? locals.old.discount : null %>">
+                                                      <span class="error-message" id="discountErrors">
+                                                            <%= locals.errors && locals.errors.discount ? locals.errors.discount.msg : null %>
+                                                      </span>
+                                                </div>
+                                                <div class="input-container">
+                                                      <label for="description" class="form-label">Descipción:</label>
+                                                      <textarea name="description" id="description" class="textarea-style form-control"
+                                                            placeholder="Ingrese la descripción"><%= locals.old && locals.old.description ? locals.old.description : null %></textarea>
+                                                      <span class="error-message" id="descriptionErrors">
+                                                            <%= locals.errors && locals.errors.description ? locals.errors.description.msg : null %>
+                                                      </span>
+                                                </div>
+                                                <div class="input-container">
+                                                      <label for="category" class="form-label">Categoría:</label>
+                                                      <select name="category" id="category" class="select-style form-control">
+                                                            <option value="" selected hidden>Categorias</option>
+
+
+                                                            <% category.forEach(category=> { %>
+                                                                  <option value="<%- category.idCategory %>" <%=locals.old &&
+                                                                        old.category==category.idCategory ? "selected" : null %> ><%- category.name %>
+                                                                  </option>
+                                                                  <% }) %>
+
+                                                      </select>
+                                                      <span class="error-message" id="categoryErrors">
+                                                            <%= locals.errors && locals.errors.category ? locals.errors.category.msg : null %>
+                                                      </span>
+                                                </div>
+                                                <div class="input-container">
+                                                      <label for="subcategory" class="form-label">SubCategoria: </label>
+                                                      <select name="subcategory" id="subcategory" class="select-style form-control">
+                                                            <option selected hidden value="">Subcategorias</option>
+                                                            <% subcategorys.forEach(subcategory=> { %>
+                                                                  <option value="<%- subcategory.idSubCategory %>" <%=locals.old &&
+                                                                        old.subcategory==subcategory.idSubCategory ? "selected" : null %>>
+                                                                        <%- subcategory.name %>
+                                                                  </option>
+                                                                  <% }) %>
+                                                      </select>
+                                                      <span class="error-message" id="subcategoryErrors">
+                                                            <%= locals.errors && locals.errors.subcategory ? locals.errors.subcategory.msg : null %>
+                                                      </span>
+                                                </div>
+
+                                                <div class="input-container">
+                                                      <label for="sold" class="form-label">Ventas:</label>
+                                                      <input class="input-style form-control" type="number" name="sold" placeholder="Ej: 0" id="sold"
+                                                            value="<%= locals.old && locals.old.sold ? locals.old.sold : 0 %>">
+                                                      <span class="error-message" id="soldErrors">
+                                                            <%= locals.errors && locals.errors.sold ? locals.errors.sold.msg : null %>
+                                                      </span>
+                                                </div>
+                                                <div class="input-container">
+                                                      <label for="stock" class="form-label">Stock:</label>
+                                                      <input class="input-style form-control" type="number" name="stock" placeholder="Ej: 150"
+                                                            id="stock" value="<%= locals.old && locals.old.stock ? locals.old.stock : null %>">
+                                                      <span class="error-message" id="stockErrors">
+                                                            <%= locals.errors && locals.errors.stock ? locals.errors.stock.msg : null %>
+                                                      </span>
+                                                </div>
+                                                <div class="img-container-product" id="img-preview">
+
+                                                </div>
+                                                <div class="input-container">
+                                                      <label for="img" class="form-label ">Imagen:</label>
+                                                      <div class="input-file-container">
+                                                            <p>Agregar Imagen</p>
+                                                            <input class="input-file form-control" type="file" id="image" name="image">
+                                                      </div>
+                                                      <span class="error-message" id="fileErrors">
+                                                            <%= locals.errors && locals.errors.img ? locals.errors.img.msg : null %>
+                                                      </span>
+                                                </div>
+                                                <div class="button-container">
+                                                      <button type="submit" class="btn btn-submit">Agregar</button>
+                                                </div>
+                                          </div>
+                                    </form>
+
+                              </div>
+                        </main>
+
+                        <%- include("../partials/footer") %>
+
+                              <%- include("../partials/scripts") %>
+            </div>
+            <script src="/js/products.js"></script>
+            <script src="/js/products/productCreateScript.js"></script>
+      </body>
+
+</html>

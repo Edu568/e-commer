@@ -1,0 +1,127 @@
+<header class="main-header">
+
+      <div class="main-top">
+            <div class="logo-nombre">
+                  <a href="/">
+                        <img src="/img/logo.png" alt="Logo" class="logo"></a>
+                  
+
+            </div>
+            <nav class="main-nav-rigth" style="z-index: 9999;">
+                  <ul class="d-flex">
+                       
+                        <li>
+                              <a href="/productos/carrito"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+                                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                                  </svg></i></a>
+                                  <p>Mi carrito</p>
+                              
+                        </li>
+                        <li>
+                              <% if (typeof session.user !="undefined" ){ %>
+                                    <div class="d-flex align-items-center">
+                                          <!-- Avatar -->
+
+                                          <div class="dropdown">
+                                                <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#"
+                                                      id="navbarDropdownMenuAvatar" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                                                      <img src="/img/avatar/<%= session.user.avatar %>" class="rounded-circle" height="30" width="30"
+                                                            alt="Black and White Portrait of a Man" loading="lazy" />
+                                                      </i><span class="session"></span>
+                                                </a>
+                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar" style="z-index: 9999;">
+                                                      <% if ( session.user.typeOfAccess=="admin" ){ %>
+                                                            <li>
+                                                                  <a class="dropdown-item" href="/admin"><i class="fa-solid fa-users-gear"></i>
+                                                                        Admin</a>
+                                                            </li>
+                                                            <% } %>
+                                                                  <li>
+                                                                        <a class="dropdown-item" href="/users/profile"><i
+                                                                                    class="fa-solid fa-user"></i> Mi
+                                                                              Perfil</a>
+                                                                  </li>
+                                                                  <li>
+                                                                        <a class="dropdown-item" href="/users/logout"><i
+                                                                                    class="fa-solid fa-arrow-right-from-bracket"></i>
+                                                                              Cerrar</a>
+                                                                  </li>
+                                                </ul>
+
+                                          </div>
+                                    </div>
+                                    <% } else { %>
+                                          <a href="/users/login"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-bounding-box" viewBox="0 0 16 16">
+                                                <path d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z"/>
+                                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                              </svg></a>
+                                          <p>Login</p>
+
+                                          <% } %>
+                        </li>
+                  </ul>
+            </nav>
+
+      </div>
+
+
+      <div class="main-search">
+            <div>
+
+
+                  
+                  <div class="d-flex align-items-center">
+                        <!-- Avatar -->
+
+                        <div class="dropdown">
+                              <a class="toggle-nav dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar"
+                                    role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                                    <img src="/img/menu.png" height="25" width="25" alt="Black and White Portrait of a Man" loading="lazy" />
+                                    </i><span class="session"></span>
+                              </a>
+                              
+                              
+                              
+                              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar" style="z-index: 9999;">
+
+                                    <li> <a  href="/productos/Todos los Productos">Productos</a> </li>
+                                    <li> <a class="dropdown-item" href="/productos/Sandwich"></i>Sandwich</a> </li>
+                                    <li> <a class="dropdown-item" href="/productos/Bebidas"></i>Bebidas</a></li>
+                                    <li> <a class="dropdown-item" href="/productos/Postres"></i> Postres</a></li>
+                                    
+
+
+                              </ul>
+
+                        </div>
+                  </div>
+                  <!-- <a href="#" class="toggle-nav">
+                        <span class="fas fa-bars"></span>
+                  </a> -->
+            </div>
+            <div class="search-container">
+                  <form action="/productos/buscar" method="GET">
+
+                        <input type="search" class="search" name="valor" placeholder=" Buscar en Ecommer">
+
+                        <button class="button-search" type="submit"><i class='fa-solid fa-magnifying-glass'></i></button>
+
+                  </form>
+            </div>
+      </div>
+
+
+      <nav class="main-nav">
+
+            <ul class="menu">
+                  <li><a href="/productos/Todos los Productos">Productos</a>
+                  </li>
+                  <li><a href="/productos/Sandwich"><img src="/img/iconos/img-sandwich.png" alt="Sandwiches">Sandwich</a></li>
+                  <li><a href="/productos/Bebidas"><img src="/img/iconos/img-bebidas.png" alt="Bebidas">Bebidas</a></li>
+                  <li><a href="/productos/Postres"><img src="/img/iconos/img-postres.png" alt="Postres">Postres</a></li>
+                  
+            </ul>
+      </nav>
+
+
+</header>

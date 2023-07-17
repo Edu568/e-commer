@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="sp">
+
+<%- include("../partials/head") %>
+
+      <body>
+            <div class="container">
+                  <%- include("../partials/header") %>
+
+                        <main>
+                              <div class="form-container">
+                                    <form action="" method="POST" id="form">
+                                          <div class="form">
+                                                <img src="/img/logo.png" alt="" class="image-register">
+                                                    <p class="parrafo-login">Login</p>
+                                                <div class="input-container">
+                                                      <input class="input-style" type="email" name="email" placeholder="Ingrese su email" id="email">
+                                                      <span class="error-message" id="emailErrors">
+                                                            <%= locals.errors && locals.errors.email ? locals.errors.email.msg : null %>
+                                                      </span>
+                                                </div>
+                                                <div class="input-container">
+                                                      <input class="input-style" type="password" name="pass" placeholder="Ingrese su contraseña"
+                                                            id="pass">
+                                                      <span class="error-message" id="passErrors">
+                                                            <%= locals.errors && locals.errors.pass ? locals.errors.pass.msg : null %>
+                                                      </span>
+                                                </div>
+                                                <div class="check">
+                                                      <label for="recordar"> Recordarme </label>
+                                                      <input type="checkbox" name="recordar" id="recordar">
+                                                </div>
+                                                <div class="button-container">
+                                                      <button type="submit" class="btn btn-submit">Ingresar</button>
+                                                </div>
+                                                <span><a href="">¿Olvidaste tu contraseña?</a></span>
+                                                <span><a href="/users/register">Aún no tengo cuenta</a></span>
+
+                                          </div>
+                                    </form>
+                              </div>
+                        </main>
+
+                        <%- include("../partials/footer") %>
+
+
+
+
+                              <%- include("../partials/scripts") %>
+            </div>
+            <script src="/js/users/loginScript.js"></script>
+      </body>
+
+</html>

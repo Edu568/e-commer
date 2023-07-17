@@ -1,0 +1,61 @@
+<!-- Recibo desde el home.ejs  un string title y un array product, 
+      el cual itero con un forEach y cargo cada campo donde corresponde  -->
+<% if (order) { %>
+
+
+      <div id="idUser" value=<%=order.idUser%>></div>
+
+      <% for( let i=0; i < order.orderItems.length; i++ ) { %>
+            <section class="notVisible shopping-cart-container " id="shoppingCartContainer">
+
+                  <article class="product">
+                        <div class="imagen">
+                              <img class="photo"
+                                    src="/img/<%= order.orderItems[i].products.subcategory.category.name%>/<%= order.orderItems[i].products.images.name%>"
+                                    alt="">
+                        </div>
+                        <div class="title-container">
+                              <div id="idProduct" value=<%=order.orderItems[i].idProduct%>></div>
+                              <div id="idOrderItem" value=<%=order.orderItems[i].idOrderItem%>></div>
+                              <p class="name">
+                                    <%= order.orderItems[i].products.name%>
+                              </p>
+                             
+                        </div>
+
+                  </article>
+                  <div class="form-container">
+                        <form action="" method="">
+                              <div class="form">
+
+                                    <div class="select-container">
+                                          <label for="quantity" style="margin: 0 10px">Cantidad: </label>
+                                          <!-- <i class="fa-solid fa-square-caret-up"></i> -->
+                                          <!-- <i class="fa-solid fa-square-caret-down"></i> -->
+                                          <i class="fa-solid fa-square-caret-down" id="remove"></i>
+                                          <input type="text" name="quantity" class="input-select" id="quantity"
+                                                value="<%= order.orderItems[i].quantity%>" disabled>
+                                          <i class="fa-solid fa-square-caret-up" id="add"></i>
+                                          <div class="price-container">
+                                                <label class="price" for="price">$</label>
+                                                <p class="price" id="price">
+                                                      <%= order.orderItems[i].products.price %>
+                                                </p>
+                                          </div>
+                                    </div>
+                                    <div class=" total-container">
+                                          <div class="price-total-container">
+                                                <label class="price-total" for="price-total">Total: $</label>
+                                                <p class="price-total" id="price-total"></p>
+                                          </div>
+                                          <div class="icon-delete">
+                                                <i class="fa-regular fa-trash-can" id="deleteOrder">
+                                                </i>
+                                          </div>
+                                    </div>
+                              </div>
+                        </form>
+                  </div>
+            </section>
+            <% } %>
+                  <% } %>
